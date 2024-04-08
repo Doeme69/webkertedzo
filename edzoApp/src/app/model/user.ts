@@ -7,6 +7,6 @@ export interface User {
   psw: string
   weight: number
   height: number
-  trainer: Trainer
-  sessions: Array<Session>
+  trainer?: Trainer
+  sessions?: Array<Session>
 }

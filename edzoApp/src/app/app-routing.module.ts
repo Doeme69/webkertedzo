@@ -5,6 +5,7 @@ import {MainpageComponent} from "./mainpage/mainpage.component";
 import {CalendarComponent} from "./calendar/calendar.component";
 import {ProgressComponent} from "./progress/progress.component";
 import {CustomersComponent} from "./customers/customers.component";
+import {AddSessionComponent} from "./calendar/add-session/add-session.component";
 
 const routes: Routes = [
   {path: '', component:MainpageComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'main', component:MainpageComponent},
   {path: 'calendar', component: CalendarComponent},
   {path: 'progress', component:ProgressComponent},
-  {path: 'customers', component: CustomersComponent}
+  {path: 'customers', component: CustomersComponent},
+  {path: 'addSession', component: AddSessionComponent}
 ];
 
 @NgModule({

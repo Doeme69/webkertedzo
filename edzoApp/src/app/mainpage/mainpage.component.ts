@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-mainpage',

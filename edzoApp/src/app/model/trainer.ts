@@ -5,6 +5,6 @@ export interface Trainer {
   name: string
   email: string
   psw: string
-  customers: Array<User>
-  sessions: Array<Session>
+  customers?: Array<User>
+  sessions?: Array<Session>
 }
