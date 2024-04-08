@@ -9,6 +9,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { SharedComponent } from './shared/shared.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProgressComponent } from './progress/progress.component';
+import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProgressComponent } from './progress/progress.component';
     MainpageComponent,
     SharedComponent,
     CalendarComponent,
-    ProgressComponent
+    ProgressComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
