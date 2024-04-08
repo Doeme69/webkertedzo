@@ -1,0 +1,8 @@
+.main-container{
+  display: flex;
+  gap: 10px;
+}
+
+.miniCalendar, .miniProgress{
+  border: 1px solid black;
+}
