@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Session} from "../model/Session";
 
 @Component({
   selector: 'app-shared',

@@ -1,1 +1,24 @@
+<div class="newSession container">
+  <h2>Add Meeting to Calendar</h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="meetingStart">Start Time:</label>
+      <input type="datetime-local" id="meetingStart" name="meetingStart" [formControl]="date1" required>
+    </div>
+    <div class="form-group">
+      <label for="meetingEnd">End Time:</label>
+      <input type="datetime-local" id="meetingEnd" name="meetingEnd" [formControl] = "date2" required>
+    </div>
+    <div class="form-group">
+      <label for="attendees">Customer:</label>
+      <input id="attendees" name="attendees">
+
+    </div>
+    <div class="form-group">
+      <input type="submit" value="+   Add Session" (click)="addSession()">
+    </div>
+  </form>
+</div>
+
+
 
