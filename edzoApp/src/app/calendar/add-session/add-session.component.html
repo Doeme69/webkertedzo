@@ -2,18 +2,33 @@
   <h2>Add Meeting to Calendar</h2>
   <form action="#" method="post">
     <div class="form-group">
-      <label for="meetingStart">Start Time:</label>
-      <input type="datetime-local" id="meetingStart" name="meetingStart" [formControl]="date1" required>
+      <label for="meetingStartDay">Start Time:</label>
+      <input type="date" id="meetingStartDay" name="meetingStart" [formControl]="day" required>
     </div>
     <div class="form-group">
-      <label for="meetingEnd">End Time:</label>
-      <input type="datetime-local" id="meetingEnd" name="meetingEnd" [formControl] = "date2" required>
+      <label for="meetingStartHours">Start Time:</label>
+      <input type="time" id="meetingStartHours" name="meetingStart" [formControl]="hour" required>
     </div>
-    <div class="form-group">
-      <label for="attendees">Customer:</label>
-      <input id="attendees" name="attendees">
 
+    <div class="form-group">
+      <label for="hours">Duration (hours)</label>
+      <select id="hours" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedHour" required>
+        <option value="30">0.5</option>
+        <option value="60">1</option>
+        <option value="90">1.5</option>
+        <option value="120">2</option>
+        <option value="150">2.5</option>
+        <option value="180">3</option>
+        <option value="210">3.5</option>
+        <option value="240">4</option>
+      </select>
     </div>
+
+    <div class="form-group">
+      <label for="customer">Customer:</label>
+      <input id="customer" name="customer" required>
+    </div>
+
     <div class="form-group">
       <input type="submit" value="+   Add Session" (click)="addSession()">
     </div>

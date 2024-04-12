@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Session} from "../../model/session";
 
@@ -10,18 +10,25 @@ import {Session} from "../../model/session";
     ReactiveFormsModule
   ],
   templateUrl: './add-session.component.html',
-  styleUrl: './add-session.component.css'
+  styleUrls: ['./add-session.component.css']
 })
 export class AddSessionComponent {
 
-  date1 = new FormControl
-  date2 = new FormControl
-
-  //TODO DatePickert kiprobalni
-  //TODO Kicserelni a datum valasztast mert amugy csak az orak fognak szamitani
+  day = new FormControl
+  hour = new FormControl
+  selectedHour: string = ''
+  chosenHour: string = ''
 
   addSession(){
+    this.chosenHour = this.selectedHour
+    let date = this.day.value.toString().split('-')
+    let time = this.hour.value.toString().split(':')
 
-    console.log(this.date1.value.toString())
+    let asd: Date = new Date(date[0], date[1], date[2], time[0], time[1])
+    let dsa: Date = new Date(date[0], date[1], date[2], time[0], time[1])
+    dsa.setMinutes(asd.getMinutes() + + this.chosenHour)
+
+    return new Session(asd, dsa)
   }
+
 }
