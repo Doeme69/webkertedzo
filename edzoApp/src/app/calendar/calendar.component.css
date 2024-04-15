@@ -9,8 +9,12 @@
 }
 
 .nextSession {
+  padding-left: 15px;
   display:flex;
-  margin-top: 25px;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-right: 40%;
   border: 2px solid darkblue;
-  border-radius: 5px;
+  border-radius: 25px;
+  text-decoration: none;
 }

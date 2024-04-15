@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
+import {User} from "../../model/user";
 
 @Component({
   selector: 'app-register',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  register: FormGroup = new FormGroup<User>({
+    username: new FormControl,
+    email: new FormControl,
+    psw: new FormControl
+  })
+
+  registerUser(){
+
+  }
 }

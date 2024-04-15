@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Session} from "../../model/session";
 import {RouterLink} from "@angular/router";
@@ -34,6 +34,4 @@ export class AddSessionComponent {
 
     return new Session(asd, dsa)
   }
-
-  geci = new FormControl('', Validators.minLength(3))
 }
