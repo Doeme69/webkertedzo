@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/edzo-app",
+    "site": "webkertedzo",
     "ignore": [
       "firebase.json",
       "**/.*",

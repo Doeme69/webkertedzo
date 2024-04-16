@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "webkertedzo": {
+      "hosting": {
+        "webkertedzo": [
+          "webkertedzo"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "webkertedzo"
   }
