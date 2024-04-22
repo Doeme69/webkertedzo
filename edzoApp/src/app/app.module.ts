@@ -11,6 +11,11 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ProgressComponent } from './progress/progress.component';
 import { CustomersComponent } from './customers/customers.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {getAuth, provideAuth} from "@angular/fire/auth";
+import {getFirestore, provideFirestore} from "@angular/fire/firestore";
+import {getStorage, provideStorage} from "@angular/fire/storage";
+import {enviroment} from "../enviroments/enviroment";
+import {AngularFireModule} from "@angular/fire/compat";
 
 @NgModule({
   declarations: [
@@ -27,7 +32,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(enviroment.firebase),
+    // provideFirebaseApp(() => initializeApp(enviroment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

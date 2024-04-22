@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {User} from "../../model/user";
+import {FormControl} from "@angular/forms";
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -9,13 +10,20 @@ import {User} from "../../model/user";
 })
 export class RegisterComponent {
 
-  register: FormGroup = new FormGroup<User>({
-    username: new FormControl,
-    email: new FormControl,
-    psw: new FormControl
-  })
+  emailForm: FormControl = new FormControl()
+  pswForm: FormControl = new FormControl()
+
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   registerUser(){
-
+    this.authService.registerUser(this.emailForm.value, this.pswForm.value)
+      .then(() => {
+        console.log('Sign up successful!');
+        this.router.navigate(['/main'])
+      })
+      .catch(error => {
+        console.error('Sign up error:', error);
+      });
   }
 }

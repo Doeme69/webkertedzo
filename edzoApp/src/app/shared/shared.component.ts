@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-shared',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SharedComponent {
 
+  constructor(private fireAuth: AngularFireAuth) {
+  }
+
+  isLoggedIn(){
+    return !!this.fireAuth.currentUser
+  }
 }
