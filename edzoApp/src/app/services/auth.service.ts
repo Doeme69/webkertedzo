@@ -16,7 +16,15 @@ export class AuthService {
     return this.auth.signInWithEmailAndPassword(email, password)
   }
 
+  isLoggedIn(){
+    return this.auth.user
+  }
+
   logout(){
-    return this.auth.signOut()
+    return this.auth.signOut().then(() => {
+      console.log('Logged out')
+    }).catch(error => {
+      console.log(error)
+    })
   }
 }
