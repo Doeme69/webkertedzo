@@ -24,6 +24,7 @@ export class LoginComponent {
       })
       .catch(error => {
         console.error('Sign up error:', error);
+        alert("Invalid credentials!")
       });
   }
 }

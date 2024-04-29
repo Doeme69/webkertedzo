@@ -7,13 +7,12 @@ Csodas Edzo App
         <li><a routerLink="/calendar">History</a></li>
         <li><a routerLink="/progress">Progress</a></li>
         <li><a routerLink="/customers">Profile</a></li>
+        <li><a (click)="logout()">Logout</a></li>
       </ng-container>
-      <li><a routerLink="/main">Back to the main page</a></li>
       <ng-container *ngIf="loggedInUser == null">
         <li><a routerLink="/login">Login</a></li>
         <li><a routerLink="/register">Register</a></li>
       </ng-container>
-      <li><a (click)="logout()">logout</a></li>
     </ul>
   </nav>
 </div>
