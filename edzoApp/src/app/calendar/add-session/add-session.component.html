@@ -3,10 +3,13 @@
 <div class="newSession container">
   <h2>Add Meeting to Calendar</h2>
   <form action="#" method="post">
-    <div class="form-group">
-      <label for="meetingStartDay">Start Time:</label>
-      <input type="date" id="meetingStartDay" name="meetingStart" [formControl]="day" required>
-    </div>
+    <mat-form-field class="form-group">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
     <div class="form-group">
       <input type="time" id="meetingStartHours" name="meetingStart" [formControl]="hour" required>
     </div>

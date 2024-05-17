@@ -16,6 +16,8 @@ import {getFirestore, provideFirestore} from "@angular/fire/firestore";
 import {getStorage, provideStorage} from "@angular/fire/storage";
 import {enviroment} from "../enviroments/enviroment";
 import {AngularFireModule} from "@angular/fire/compat";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -28,17 +30,19 @@ import {AngularFireModule} from "@angular/fire/compat";
     ProgressComponent,
     CustomersComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(enviroment.firebase),
-    // provideFirebaseApp(() => initializeApp(enviroment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(enviroment.firebase),
+        // provideFirebaseApp(() => initializeApp(enviroment.firebase)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideStorage(() => getStorage()),
+        BrowserAnimationsModule,
+        MatCardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
